@@ -1,4 +1,6 @@
 <%@include file="/apps/less-css-framework/global.jsp" %>
-<div class="shape">
+<a>
+    <div class="shape">
 
-</div>
+    </div>
+</a>

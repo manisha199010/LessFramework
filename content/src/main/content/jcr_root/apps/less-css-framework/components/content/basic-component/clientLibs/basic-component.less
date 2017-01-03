@@ -1,11 +1,30 @@
-.shape {
-  display:inline-block;
-  width:200px;
-  height:200px;
+// these are variables, pretty self-explanatory!!!
+@lightRed: rgba(253, 39, 21, 0.68);
+@lightGreen: #479A4A;
+@lightBlue: #6677ff;
+@property: color;
+
+@defaultThemeColor:@lightRed;
+
+@defaultHover: darken(@defaultThemeColor, 15%);
+// VARIABLE INTERPOLATION - selector
+// selector names, property names, URLs and @import statements
+@Shape: shape;
+.@{Shape} {
+  position: fixed;
   float: left;
-  background:red;
-  border-top: 1px dotted gray;
-  margin:20px;
+  margin-left: 1.5%;
+  top: 1em;
+  height: 10em;
+  width: 10em;
+  text-align: center;
+  border-radius: .3em;
+  opacity: .5;
+  padding-top: 1em;
+  border: .2em solid @defaultThemeColor;
+}
+.shape:hover {
+  background-@{property}: @defaultHover;
 }
 
 

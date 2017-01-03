@@ -7,7 +7,7 @@
     </div>
     <div class="navigation">
         <div class="clearfix">
-            <p>Pikachuuuu</p>
+            <p></p>
         </div>
     </div>
 </header>
