@@ -1,7 +1,27 @@
+//No output mixins
+//can have parameters : (@borderWidth)
+//can have default value : (@borderWidth: 5px)
+.Border() {
+  border: .2em solid #479A4A;
+  //selectores in mixins
+  &:hover {
+    border: 1px solid red;
+  }
+}
+.Margin(@mar: 2, 4, 2, 4;) {
+  margin: @mar;
+}
+// !important keyword in mixins
+/*.unimportant {
+  .Border();
+}
+.important {
+  .Border() !important;
+}*/
 .shape {
   position: fixed;
   float: left;
-  margin-left: 1.5%;
+  .Margin(2 3);
   top: 1em;
   height: 10em;
   width: 10em;
@@ -9,8 +29,20 @@
   border-radius: .3em;
   opacity: .5;
   padding-top: 1em;
-  border: .2em solid #479A4A;
+  .Border() !important;
 }
-
+//mixins
+.Round {
+  -webkit-border-radius:9999px;
+  -moz-border-radius:9999px;
+  border-radius:9999px;
+  height: 2em;
+  width: 2em;
+  margin-left: 20px;
+  background: darken(#00ff00, 20%);;
+}
+#shape1 {
+  .Round;
+}
 
 
