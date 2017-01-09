@@ -1,16 +1,33 @@
-.shape {
-  position: fixed;
-  float: left;
-  margin-left: 1.5%;
-  top: 1em;
-  height: 10em;
-  width: 10em;
-  text-align: center;
-  border-radius: .3em;
-  opacity: .5;
-  padding-top: 1em;
-  border: .2em solid #479A4A;
+
+.set-bg-color (@color) when (lightness(@color) >= 20%) {
+  background: black;
 }
+.set-bg-color (@color) when (lightness(@color) < 20%) {
+  background: #ccc;
+}
+.loop(@counter) when (@counter > 0){
+  .loop((@counter - 1));
+
+  @color: darken(#9BC8A5, @counter * 15%);
+
+  .shape@{counter} {
+    float: left;
+    margin-left: @counter * 10px;
+    top: 1em;
+    height: 10em;
+    width: 10em;
+    text-align: center;
+    border-radius: .3em;
+    opacity: .5;
+    padding-top: 1em;
+    border: .3em solid @color;
+    .set-bg-color(@color);
+  }
+}
+
+.loop(5);
+
+
 
 
 
